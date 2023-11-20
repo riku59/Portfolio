@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "font-1";
+  src: url();
+}
+@font-face {
+  font-family: "font-2";
+  src: url();
+}
+
+$font-1: "font-1", sans-serif;
+$font-2: "font-2", serif;
+
+$color-1: black;
+$color-2: black;
+$color-3: black;
+$color-4: black;
+$black: black;
+$red: red;
+
+* {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}

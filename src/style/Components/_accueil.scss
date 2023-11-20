@@ -1,0 +1,13 @@
+.accueil {
+  background: beige;
+  height: 100vh;
+  .accueil-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .accueil-logo {
+      img {
+        filter: brightness(0%);
+      }
+    }
+  }
+}

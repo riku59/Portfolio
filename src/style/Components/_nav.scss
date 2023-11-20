@@ -1,0 +1,22 @@
+.nav {
+  display: grid;
+  grid-template-columns: 10% 78% 5% 7%;
+  padding: 25px 0;
+
+  .nav-home {
+    text-align: center;
+  }
+  .nav-section {
+    width: 100%;
+    ul {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  .nav-language {
+    text-align: center;
+  }
+  .nav-light-mode {
+    text-align: center;
+  }
+}
