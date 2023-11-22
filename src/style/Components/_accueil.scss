@@ -1,12 +1,64 @@
 .accueil {
-  background: beige;
   height: 100vh;
   .accueil-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 100%;
+    align-items: center;
+    .accueil-txt {
+      padding: 20px;
+      h2 {
+        font-size: 5rem;
+      }
+      h3 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.4rem;
+        margin-top: 20px;
+      }
+    }
+    button {
+      border: 1px solid black;
+      background: $background;
+      display: flex;
+      margin-top: 40px;
+      font-size: 1rem;
+      a {
+        padding: 4px 8px;
+        border-radius: 10px;
+        color: $text;
+      }
+      :hover {
+        background: $component;
+      }
+    }
     .accueil-logo {
-      img {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      width: 500px;
+      #logo1 {
+        position: absolute;
         filter: brightness(0%);
+      }
+      #logo2 {
+        opacity: 0.6;
+        position: absolute;
+        filter: brightness(0%) blur(1px);
+      }
+      #logo3 {
+        opacity: 0.4;
+        position: absolute;
+        filter: brightness(0%) blur(2px);
+      }
+      #logo4 {
+        transform: scale(0.75);
+        opacity: 0.2;
+        position: absolute;
+        filter: brightness(0%) blur(3px);
       }
     }
   }

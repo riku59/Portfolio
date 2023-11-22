@@ -1,5 +1,4 @@
 import React from "react";
-import Nav from "./components/Nav";
 import Accueil from "./components/Accueil";
 import AboutMe from "./components/AboutMe";
 import Projets from "./components/Projets";

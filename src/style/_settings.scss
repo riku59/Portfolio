@@ -10,11 +10,11 @@
 $font-1: "font-1", sans-serif;
 $font-2: "font-2", serif;
 
-$color-1: black;
-$color-2: black;
-$color-3: black;
-$color-4: black;
-$black: black;
+$background: #f9f9f9;
+$component: #e8e8e8;
+$border: #cecece;
+$solid: #8d8d8d;
+$text: #202020;
 $red: red;
 
 * {
@@ -26,4 +26,16 @@ $red: red;
   outline: none;
   border: none;
   text-decoration: none;
+}
+body {
+  background: $background;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  color: $text;
 }
