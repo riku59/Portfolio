@@ -32,10 +32,14 @@ const Accueil = () => {
 
       // Appliquer la rotation, la translation en X et Y, et l'échelle aux quatre images du logo
 
-      logoContainer.querySelector("#logo1").style.transition = "transform 0.4s";
-      logoContainer.querySelector("#logo2").style.transition = "transform 0.4s";
-      logoContainer.querySelector("#logo3").style.transition = "transform 0.4s";
-      logoContainer.querySelector("#logo4").style.transition = "transform 0.4s";
+      logoContainer.querySelector("#logo1").style.transition =
+        "transform 0.7s linear";
+      logoContainer.querySelector("#logo2").style.transition =
+        "transform 0.7s linear";
+      logoContainer.querySelector("#logo3").style.transition =
+        "transform 0.7s  linear";
+      logoContainer.querySelector("#logo4").style.transition =
+        "transform 0.7s linear";
 
       logoContainer.querySelector("#logo1").style.transform = `rotateX(${
         angleX * 45
