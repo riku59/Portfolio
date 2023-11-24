@@ -78,8 +78,7 @@ const Accueil = () => {
           <h2>Nicolas WILST</h2>
           <h3>Développeur Front-end.</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-            natus?
+            Lorem ipsum dolor sit amet consectetur adipisicing Earum, natus?
           </p>
           <div className="contact-me">
             <button>
