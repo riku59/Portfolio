@@ -4,9 +4,11 @@ const Projets = () => {
   return (
     <div>
       <h3>Projet</h3>
-      <p>projet1</p>
-      <p>projet2</p>
-      <p>projet3</p>
+      <div className="projets">
+        <p>projet1</p>
+        <p>projet2</p>
+        <p>projet3</p>
+      </div>
     </div>
   );
 };

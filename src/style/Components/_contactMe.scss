@@ -1,9 +1,45 @@
 .contact-me {
   input {
     border: 1px solid black;
+    border-radius: 22px;
+    opacity: 0.75;
+    padding: 22px 30px;
+    height: 50px;
   }
   textarea {
     border: 1px solid black;
     resize: none;
+    border-radius: 22px;
+    opacity: 0.75;
+    padding: 22px 30px;
   }
+  form {
+    display: grid;
+    width: 50%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "name email"
+      "objet objet"
+      "message message";
+    gap: 20px;
+    #nom {
+      grid-area: name;
+      width: 100%;
+    }
+    #email {
+      grid-area: email;
+      width: 100%;
+    }
+    #objet {
+      grid-area: objet;
+      width: 100%;
+    }
+    #message {
+      grid-area: message;
+      width: 100%;
+      padding-bottom: 50px;
+    }
+  }
+  padding-bottom: 100px;
 }
