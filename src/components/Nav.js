@@ -1,6 +1,9 @@
 import React from "react";
 
-const Nav = () => {
+const Nav = ({ darkMode, setDarkMode }) => {
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
   return (
     <div className="nav">
       <div className="nav-home">
@@ -18,7 +21,9 @@ const Nav = () => {
         <h5>Francais</h5>
       </div>
       <div className="nav-light-mode">
-        <h5>light mode</h5>
+        <button onClick={toggleDarkMode}>
+          {darkMode ? "Mode Clair" : "Mode Sombre"}
+        </button>
       </div>
     </div>
   );

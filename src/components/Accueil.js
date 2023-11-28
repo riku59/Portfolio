@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Nav from "./Nav";
 
-const Accueil = () => {
+const Accueil = ({ darkMode, setDarkMode }) => {
   const logoContainerRef = useRef(null);
 
   useEffect(() => {
@@ -18,17 +18,17 @@ const Accueil = () => {
       const angleX = (clientY - centerY) / height;
       const angleY = (clientX - centerX) / width;
 
-      const translateX1 = (clientX - centerX) * 0.35; // Ajuste le coefficient selon tes besoins
-      const translateY1 = (clientY - centerY) * 0.35; // Ajuste le coefficient selon tes besoins
+      const translateX1 = (clientX - centerX) * 0.35;
+      const translateY1 = (clientY - centerY) * 0.35;
 
-      const translateX2 = (clientX - centerX) * 0.3; // Ajuste le coefficient selon tes besoins
-      const translateY2 = (clientY - centerY) * 0.3; // Ajuste le coefficient selon tes besoins
+      const translateX2 = (clientX - centerX) * 0.3;
+      const translateY2 = (clientY - centerY) * 0.3;
 
-      const translateX3 = (clientX - centerX) * 0.2; // Ajuste le coefficient selon tes besoins
-      const translateY3 = (clientY - centerY) * 0.2; // Ajuste le coefficient selon tes besoins
+      const translateX3 = (clientX - centerX) * 0.2;
+      const translateY3 = (clientY - centerY) * 0.2;
 
-      const translateX4 = (clientX - centerX) * 0.1; // Ajuste le coefficient selon tes besoins
-      const translateY4 = (clientY - centerY) * 0.1; // Ajuste le coefficient selon tes besoins
+      const translateX4 = (clientX - centerX) * 0.1;
+      const translateY4 = (clientY - centerY) * 0.1;
 
       // Appliquer la rotation, la translation en X et Y, et l'échelle aux quatre images du logo
 
@@ -72,7 +72,7 @@ const Accueil = () => {
 
   return (
     <div className="accueil">
-      <Nav />
+      <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
       <div className="accueil-container">
         <div className="accueil-txt">
           <h2>Nicolas WILST</h2>

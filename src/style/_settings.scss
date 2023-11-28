@@ -10,7 +10,7 @@
 $font-1: "font-1", sans-serif;
 $font-2: "font-2", serif;
 
-$background: #f9f9f9;
+$background: #fbf7fe;
 $component: #e8e8e8;
 $border: #cecece;
 $solid: #8d8d8d;
@@ -18,7 +18,6 @@ $text: #202020;
 $red: red;
 
 * {
-  max-width: 1440px;
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
@@ -27,15 +26,24 @@ $red: red;
   border: none;
   text-decoration: none;
 }
+.dark-mode {
+  background-color: #1e1523;
+  color: #d19dff;
+  border: 1px solid #664282;
+  button {
+    background: #1e1523;
+    color: #d19dff;
+    border: 1px solid #54346b;
+    :hover {
+      background: #3d224e;
+    }
+  }
+}
 body {
   background: $background;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-p {
-  color: $text;
+button {
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: $background;
 }
