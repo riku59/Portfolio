@@ -10,10 +10,12 @@ const AboutMe = () => {
         d'apprendre et de grandir dans cet excitant domaine du développement
         web.
       </p>
+      <br />
       <p>
         je suis en constante quête d'amélioration, grace a l'apprentissage
         continu et la volonté de relever de nouveaux défis
       </p>
+      <br />
       <p>
         Pour résumer, je me passionne un peu plus chaque jour dans le
         développement

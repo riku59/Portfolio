@@ -21,9 +21,7 @@ const Nav = ({ darkMode, setDarkMode }) => {
         <h5>Francais</h5>
       </div>
       <div className="nav-light-mode">
-        <button onClick={toggleDarkMode}>
-          {darkMode ? "Mode Clair" : "Mode Sombre"}
-        </button>
+        <button onClick={toggleDarkMode}>{darkMode ? "☀️ " : "🌙 "}</button>
       </div>
     </div>
   );

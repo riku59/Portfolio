@@ -1,10 +1,10 @@
 @font-face {
   font-family: "font-1";
-  src: url();
+  src: url(../assets/fonts/AtkinsonHyperlegible-Regular.ttf);
 }
 @font-face {
   font-family: "font-2";
-  src: url();
+  src: url(../assets/fonts/RocknRollOne-Regular.ttf);
 }
 
 $font-1: "font-1", sans-serif;
@@ -14,8 +14,33 @@ $background: #fbf7fe;
 $component: #e8e8e8;
 $border: #cecece;
 $solid: #8d8d8d;
-$text: #202020;
-$red: red;
+$text: #402060;
+$hovertext: #a50606;
+$backgrounddark: #1e1523;
+$textdark: #d19dff;
+$backgroundnav: #e0c4f4;
+$backgrounddarknav: #18111b;
+@keyframes reveal {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 * {
   margin: 0 auto;
@@ -27,23 +52,29 @@ $red: red;
   text-decoration: none;
 }
 .dark-mode {
-  background-color: #1e1523;
-  color: #d19dff;
-  border: 1px solid #664282;
-  button {
-    background: #1e1523;
-    color: #d19dff;
-    border: 1px solid #54346b;
-    :hover {
-      background: #3d224e;
-    }
-  }
+  background-color: $backgrounddark;
+  color: $textdark;
 }
 body {
   background: $background;
 }
-button {
-  padding: 5px 10px;
-  border-radius: 10px;
-  background: $background;
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-1;
+  letter-spacing: 1px;
+}
+p,
+li {
+  font-family: $font-2;
+  letter-spacing: 0.7px;
+}
+h3 {
+  animation: reveal linear;
+  animation-timeline: view();
+  animation-range-start: cover 0%;
+  animation-range-end: contain 40%;
 }

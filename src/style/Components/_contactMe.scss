@@ -1,13 +1,24 @@
 .contact-me {
+  color: $text;
+  ::placeholder {
+    color: $text;
+  }
+  h3 {
+    padding-bottom: 50px;
+    padding-left: 50px;
+    font-size: 2rem;
+  }
   input {
-    border: 1px solid black;
+    font-family: $font-2;
+    border: 1px solid #e0c4f4;
     border-radius: 22px;
     opacity: 0.75;
     padding: 22px 30px;
     height: 50px;
   }
   textarea {
-    border: 1px solid black;
+    font-family: $font-2;
+    border: 1px solid #e0c4f4;
     resize: none;
     border-radius: 22px;
     opacity: 0.75;
@@ -42,4 +53,8 @@
     }
   }
   padding-bottom: 100px;
+  input:focus,
+  textarea:focus {
+    border: 2px solid #be93e4;
+  }
 }

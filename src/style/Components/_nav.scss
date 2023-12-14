@@ -2,12 +2,20 @@
   display: grid;
   grid-template-columns: 10% 78% 5% 7%;
   padding: 25px 0;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  background: $backgroundnav;
+  color: $text;
+  z-index: 5;
 
   .nav-home {
     text-align: center;
     h5 {
       padding: 4px 8px;
       border-radius: 10px;
+      margin-left: 15px;
+      font-size: 1.2rem;
     }
     :hover {
       background: $component;
@@ -18,7 +26,9 @@
     ul {
       display: flex;
       justify-content: space-around;
-      padding: 0;
+      padding: 0 30px;
+      align-items: center;
+      margin: 0 auto;
 
       li {
         padding: 4px 8px;
@@ -40,9 +50,17 @@
       background: $component;
     }
   }
+  button {
+    font-size: 1.2rem;
+    display: flex;
+    background: black;
+  }
 }
 
 .dark-mode {
+  .nav {
+    border-bottom: 1px solid grey;
+  }
   .nav-home {
     h5:hover {
       background: #3d224e;
@@ -59,9 +77,15 @@
   button {
     background: #1e1523;
     color: #d19dff;
-    border: 1px solid #54346b;
+
     :hover {
       background-color: #8e719e;
     }
+  }
+}
+.dark-mode {
+  .nav {
+    background: $backgrounddarknav;
+    color: #d19dff;
   }
 }

@@ -1,0 +1,59 @@
+.competence {
+  h3 {
+    font-size: 2rem;
+    padding-bottom: 100px;
+    padding-top: 100px;
+    padding-left: 50px;
+    color: $text;
+  }
+}
+
+.competences {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+
+  img {
+    width: 130px;
+  }
+  .sass-logo {
+    background: blue;
+    padding: 20px 10px;
+    border-radius: 1000px;
+    animation: reveal linear;
+    animation-timeline: view();
+    animation-range-start: cover 0%;
+    animation-range-end: contain 70%;
+  }
+  .javascript-logo {
+    background: rgb(238, 255, 0);
+    padding: 12px 10px;
+    border-radius: 1000px;
+    animation: reveal linear;
+    animation-timeline: view();
+    animation-range-start: cover 0%;
+    animation-range-end: contain 70%;
+    img {
+      width: 110px;
+    }
+  }
+  .react-logo {
+    background: rgb(0, 174, 255);
+    padding: 12px 10px;
+    border-radius: 1000px;
+    animation: reveal linear;
+    animation-timeline: view();
+    animation-range-start: cover 0%;
+    animation-range-end: contain 70%;
+  }
+  .redux-logo {
+    background: rgba(181, 0, 253, 0.61);
+    padding: 12px 10px;
+    border-radius: 1000px;
+    animation: reveal linear;
+    animation-timeline: view();
+    animation-range-start: cover 0%;
+    animation-range-end: contain 70%;
+  }
+}

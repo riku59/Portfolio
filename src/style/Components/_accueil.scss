@@ -1,5 +1,6 @@
 .accueil {
   height: 100vh;
+  color: $text;
 
   .accueil-container {
     display: grid;
@@ -25,15 +26,19 @@
       display: flex;
       margin-top: 40px;
       font-size: 1rem;
+      border-radius: 20px;
+      :hover {
+        border-radius: 20px;
+        background: #ead5f9;
+      }
       a {
-        padding: 4px 8px;
+        font-size: 1.3rem;
+        padding: 6px 12px;
         border-radius: 10px;
         color: $text;
       }
-      :hover {
-        background: $component;
-      }
     }
+
     .accueil-logo {
       position: relative;
       display: flex;
@@ -62,6 +67,47 @@
         position: absolute;
         filter: brightness(5%) blur(3px);
       }
+    }
+  }
+}
+
+.dark-mode .accueil .accueil-container {
+  button {
+    a {
+      button {
+        border-radius: 10px;
+        a {
+          background: #664282;
+          color: $textdark;
+        }
+      }
+    }
+  }
+
+  .accueil-logo {
+    #logo1 {
+      position: absolute;
+
+      filter: grayscale(100%) brightness(50%) sepia(500%) hue-rotate(-131deg);
+    }
+    #logo2 {
+      opacity: 0.6;
+      position: absolute;
+      filter: grayscale(100%) brightness(40%) sepia(500%) hue-rotate(-131deg)
+        blur(1px);
+    }
+    #logo3 {
+      opacity: 0.4;
+      position: absolute;
+      filter: grayscale(100%) brightness(30%) sepia(500%) hue-rotate(-131deg)
+        blur(2px);
+    }
+    #logo4 {
+      transform: scale(0.75);
+      opacity: 0.2;
+      position: absolute;
+      filter: grayscale(100%) brightness(20%) sepia(500%) hue-rotate(-131deg)
+        blur(3px);
     }
   }
 }

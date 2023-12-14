@@ -17,6 +17,7 @@ const ContactMe = () => {
           cols="30"
           placeholder="Entrez votre message"
         ></textarea>
+        <input type="submit" />
       </form>
     </div>
   );
