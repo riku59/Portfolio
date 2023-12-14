@@ -10,7 +10,7 @@
   }
   input {
     font-family: $font-2;
-    border: 1px solid #e0c4f4;
+    border: 1px solid $border;
     border-radius: 22px;
     opacity: 0.75;
     padding: 22px 30px;
@@ -18,7 +18,7 @@
   }
   textarea {
     font-family: $font-2;
-    border: 1px solid #e0c4f4;
+    border: 1px solid $border;
     resize: none;
     border-radius: 22px;
     opacity: 0.75;
@@ -55,6 +55,26 @@
   padding-bottom: 100px;
   input:focus,
   textarea:focus {
-    border: 2px solid #be93e4;
+    border: 2px solid $borderfocus;
+  }
+}
+.dark-mode .contact-me {
+  h3 {
+    color: $textdark;
+  }
+  input {
+    border: 1px solid $borderDark;
+    box-shadow: 0 10px 30px -5px $borderDark;
+  }
+  textarea {
+    border: 1px solid $borderDark;
+    box-shadow: 0 10px 30px -5px $borderDark;
+  }
+  ::placeholder {
+    color: $textdark;
+  }
+  input:focus,
+  textarea:focus {
+    border: 3px solid $borderfocusdark;
   }
 }

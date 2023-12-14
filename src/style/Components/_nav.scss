@@ -8,6 +8,7 @@
   background: $backgroundnav;
   color: $text;
   z-index: 5;
+  border-bottom: 1px solid $border;
 
   .nav-home {
     text-align: center;
@@ -18,7 +19,7 @@
       font-size: 1.2rem;
     }
     :hover {
-      background: $component;
+      background: $hovertext;
     }
   }
   .nav-section {
@@ -36,7 +37,8 @@
       }
 
       :hover {
-        background: $component;
+        background: $hovertext;
+        cursor: pointer;
       }
     }
   }
@@ -45,47 +47,48 @@
     h5 {
       padding: 4px 8px;
       border-radius: 10px;
+      font-size: 1.1rem;
     }
     :hover {
-      background: $component;
+      background: $hovertext;
+      cursor: pointer;
     }
   }
   button {
     font-size: 1.2rem;
     display: flex;
-    background: black;
+    background: $backgroundnav;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
 .dark-mode {
   .nav {
-    border-bottom: 1px solid grey;
-  }
-  .nav-home {
-    h5:hover {
-      background: #3d224e;
-    }
-  }
-  .nav-section ul li:hover {
-    background: #3d224e;
-  }
-  .nav-language {
-    h5:hover {
-      background: #3d224e;
-    }
-  }
-  button {
-    background: #1e1523;
-    color: #d19dff;
-
-    :hover {
-      background-color: #8e719e;
-    }
-  }
-}
-.dark-mode {
-  .nav {
+    border-bottom: 1px solid $borderDark;
+    color: $textdark;
     background: $backgrounddarknav;
-    color: #d19dff;
+
+    .nav-home {
+      h5:hover {
+        background: $hoverdark;
+      }
+    }
+    .nav-section ul li:hover {
+      background: $hoverdark;
+    }
+    .nav-language {
+      h5:hover {
+        background: $hoverdark;
+      }
+    }
+    button {
+      background: $backgrounddarknav;
+
+      :hover {
+        background-color: $hoverdark;
+      }
+    }
   }
 }

@@ -42,7 +42,7 @@
         color: white;
         display: flex;
         flex-wrap: nowrap;
-        height: 250px;
+        height: 300px;
         > .icon {
           position: absolute;
           bottom: 10px;
@@ -85,15 +85,18 @@
           h4 {
             text-transform: uppercase;
           }
-          a {
-            padding: 4px 8px;
-            border: 1px solid $hovertext;
-            border-radius: 15px;
-            color: $hovertext;
-            &:hover {
-              background: $hovertext;
-              color: $text;
-              border: 1px solid $text;
+          .link-project {
+            margin-top: 20px;
+            a {
+              padding: 4px 8px;
+              border: 1px solid $hovertext;
+              border-radius: 15px;
+              color: $hovertext;
+              &:hover {
+                background: $backgrounddarknav;
+                color: $hovertext;
+                border: 1px solid $text;
+              }
             }
           }
         }
@@ -253,114 +256,6 @@
   }
 }
 
-// .projets {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr;
-//   height: 400px;
-//   gap: 30px;
-//   margin-bottom: 50px;
-//   .container-projet {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     gap: 20px;
-//     position: relative;
-//     .card {
-//       width: 80px;
-//       border-radius: 0.75rem;
-//       background-size: cover;
-//       cursor: pointer;
-//       overflow: hidden;
-//       border-radius: 2rem;
-//       margin: 0 10px;
-//       display: flex;
-//       align-items: flex-end;
-//       transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
-//       box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
-//       > .row {
-//         color: white;
-//         display: flex;
-//         flex-wrap: nowrap;
-//       }
-//     }
-//     p {
-//       font-size: 1.3rem;
-//     }
-//   }
-//   .link-project {
-//     position: absolute;
-//     bottom: -20px;
-//     left: 40%;
-//   }
-//   .show-infos {
-//     opacity: 1;
-//     transition: opacity 0.3s ease-in-out;
-//     z-index: 2;
-//   }
-
-//   .hide-infos {
-//     opacity: 0;
-//     transition: opacity 0.3s ease-in-out;
-//   }
-
-//   .container-projet.project1 {
-//     background: url(../../../public/ReactMovie.PNG) center/cover;
-
-//     width: 100%;
-//     height: 400px;
-//     &:hover {
-//       &:before {
-//         content: "";
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         background: inherit;
-//         filter: blur(8px);
-//         z-index: 1;
-//       }
-//     }
-//   }
-//   .container-projet.project2 {
-//     // background: url(../../../public/TheResto.PNG) center/cover;
-
-//     width: 100%;
-//     height: 400px;
-//     &:hover {
-//       &:before {
-//         content: "";
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         background: inherit;
-//         filter: blur(8px);
-//         z-index: 1;
-//       }
-//     }
-//   }
-
-//   .container-projet.project3 {
-//     background: url(../../../public/TheResto.PNG) center/cover;
-//     width: 100%;
-//     height: 400px;
-//     &:hover {
-//       &:before {
-//         content: "";
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         background: inherit;
-//         filter: blur(8px);
-//         z-index: 1;
-//       }
-//     }
-//   }
-//   img {
-//     width: 100%;
-//   }
-// }
+.dark-mode .container-projet h3 {
+  color: $textdark;
+}
