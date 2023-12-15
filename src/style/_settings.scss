@@ -34,17 +34,6 @@ $borderfocusdark: #4ccce6;
   }
 }
 
-@keyframes slide {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 * {
   margin: 0 auto;
   padding: 0;
@@ -74,10 +63,4 @@ p,
 li {
   font-family: $font-2;
   letter-spacing: 0.7px;
-}
-h3 {
-  animation: reveal linear;
-  animation-timeline: view();
-  animation-range-start: cover 0%;
-  animation-range-end: contain 40%;
 }

@@ -74,7 +74,14 @@ const Projets = () => {
                       <p>{project.infos}</p>
                     </div>
                     <div className="link-project">
-                      <a href={project.Link}>Voir le projet</a>
+                      <a href={project.Link} target="_blank">
+                        Voir le projet
+                      </a>
+                    </div>
+                    <div className="link-github">
+                      <a href={project.Github} target="_blank">
+                        Lien github
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -83,7 +90,7 @@ const Projets = () => {
           ))}
         </div>
         <div className="container">
-          {filteredProjects.slice(4, 8).map((project, index) => (
+          {filteredProjects.slice(4, 9).map((project, index) => (
             <React.Fragment key={`project-${index + 5}`}>
               <input
                 type="radio"
@@ -115,7 +122,14 @@ const Projets = () => {
                       <p>{project.infos}</p>
                     </div>
                     <div className="link-project">
-                      <a href={project.Link}>Voir le projet</a>
+                      <a href={project.Link} target="_blank">
+                        Voir le projet
+                      </a>
+                    </div>
+                    <div className="link-github">
+                      <a href={project.Github} target="_blank">
+                        Lien github
+                      </a>
                     </div>
                   </div>
                 </div>

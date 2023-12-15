@@ -7,6 +7,18 @@ const Accueil = ({ darkMode, setDarkMode }) => {
   useEffect(() => {
     const logoContainer = logoContainerRef.current;
 
+    // Positions initiales des logos
+    const initialPositions = [
+      { translateX: -600, translateY: -350 },
+      { translateX: -600, translateY: 380 },
+      { translateX: 380, translateY: 380 },
+      { translateX: 380, translateY: -350 },
+    ];
+    logoContainer.querySelectorAll(".logo").forEach((logo, index) => {
+      const { translateX, translateY } = initialPositions[index];
+      logo.style.transform = `translate(${translateX}px, ${translateY}px) scale(2)`;
+    });
+
     const handleMouseMove = (event) => {
       const { clientX, clientY } = event;
       const { left, top, width, height } =
@@ -63,6 +75,11 @@ const Accueil = ({ darkMode, setDarkMode }) => {
       }deg) translateX(${translateX4}px) translateY(${translateY4}px) scale(0.7)`;
     };
 
+    handleMouseMove({
+      clientX: window.innerWidth / 2,
+      clientY: window.innerHeight / 2,
+    });
+
     document.addEventListener("mousemove", handleMouseMove);
 
     return () => {
@@ -85,10 +102,10 @@ const Accueil = ({ darkMode, setDarkMode }) => {
           </div>
         </div>
         <div className="accueil-logo" ref={logoContainerRef}>
-          <img src="logo1.png" alt="" id="logo1" />
-          <img src="logo1.png" alt="" id="logo2" />
-          <img src="logo1.png" alt="" id="logo3" />
-          <img src="logo1.png" alt="" id="logo4" />
+          <img src="logo1.png" alt="" id="logo1" className="logo" />
+          <img src="logo1.png" alt="" id="logo2" className="logo" />
+          <img src="logo1.png" alt="" id="logo3" className="logo" />
+          <img src="logo1.png" alt="" id="logo4" className="logo" />
         </div>
       </div>
     </div>
