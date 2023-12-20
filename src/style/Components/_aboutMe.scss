@@ -1,7 +1,9 @@
 .about-me {
   min-height: 300px;
-  padding-left: 50px;
+  padding: 20px 50px;
   color: $text;
+  background: $backgroundnav;
+
   h3 {
     font-size: 2rem;
     padding-bottom: 30px;
@@ -10,10 +12,19 @@
   }
   p {
     transition: opacity 1s ease, transform 1s ease; // Ajoute un délai de 0.2s avant de commencer la transition de transform
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     letter-spacing: 0.7px;
   }
 }
 .dark-mode .about-me {
   color: $textdark;
+  background: $backgrounddark1;
+}
+
+@media screen and (max-width: 650px) {
+  .about-me {
+    p {
+      font-size: 1rem;
+    }
+  }
 }

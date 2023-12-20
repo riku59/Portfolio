@@ -7,18 +7,24 @@ import ContactMe from "./components/ContactMe";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
-
-  // const toggleDarkMode = () => {
-  //   setDarkMode(!darkMode);
-  // };
+  const [language, setLanguage] = useState(true);
 
   return (
-    <div className={`app ${darkMode ? "dark-mode" : ""}`}>
-      <Accueil darkMode={darkMode} setDarkMode={setDarkMode} />
-      <AboutMe />
-      <Projets />
-      <Competences />
-      <ContactMe />
+    <div
+      className={`app ${darkMode ? "dark-mode" : ""} ${
+        language ? "language" : ""
+      } `}
+    >
+      <Accueil
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        language={language}
+        setLanguage={setLanguage}
+      />
+      <AboutMe language={language} />
+      <Projets language={language} />
+      <Competences language={language} />
+      <ContactMe language={language} />
     </div>
   );
 };

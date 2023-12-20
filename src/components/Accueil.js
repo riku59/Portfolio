@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Nav from "./Nav";
 
-const Accueil = ({ darkMode, setDarkMode }) => {
+const Accueil = ({ darkMode, setDarkMode, language, setLanguage }) => {
   const logoContainerRef = useRef(null);
 
   useEffect(() => {
@@ -89,15 +89,24 @@ const Accueil = ({ darkMode, setDarkMode }) => {
 
   return (
     <div className="accueil">
-      <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Nav
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        setLanguage={setLanguage}
+        language={language}
+      />
       <div className="accueil-container">
         <div className="accueil-txt">
           <h2>Nicolas WILST</h2>
-          <h3>Développeur Front-end.</h3>
-          <p>Passionné par le développement</p>
+          <h3>{language ? "Développeur Front end" : "front end developer"}</h3>
+          <p>
+            {language
+              ? "Passionné par le développement"
+              : "A passion for development"}
+          </p>
           <div className="contact-me">
             <button>
-              <a href="#">Me contacter</a>
+              <a href="#">{language ? "Me contacter" : "Contact Me"}</a>
             </button>
           </div>
         </div>

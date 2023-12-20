@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { projectsData } from "../data/projectsData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faHtml5,
   faJs,
@@ -8,8 +9,8 @@ import {
   faSass,
 } from "@fortawesome/free-brands-svg-icons";
 
-const getLanguageIcon = (language) => {
-  switch (language.toLowerCase()) {
+const getLanguageIcon = (competence) => {
+  switch (competence.toLowerCase()) {
     case "react":
       return <FontAwesomeIcon icon={faReact} />;
     case "html":
@@ -19,9 +20,9 @@ const getLanguageIcon = (language) => {
 
     case "javascript":
       return <FontAwesomeIcon icon={faJs} />;
-    // Ajoutez d'autres cas au besoin
+
     default:
-      return language;
+      return competence;
   }
 };
 
@@ -31,23 +32,52 @@ const filteredProjects = projectsData.filter((project) => {
   }
   return trimmedTitle !== "";
 });
-console.log(filteredProjects.slice(4, 8));
 
-console.log("Projets filtrés : ", filteredProjects);
+const Projets = ({ language }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const projetsRef = useRef(null);
 
-const Projets = () => {
+  const handleScroll = () => {
+    const element = projetsRef.current;
+
+    if (element) {
+      const bounding = element.getBoundingClientRect();
+      const isVisible = bounding.top <= window.innerHeight * 0.7;
+      setIsVisible(isVisible);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Vérifie la visibilité initiale
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="container-projet">
-      <h3>Projets</h3>
+    <div
+      className={`container-projet ${isVisible ? "visible" : ""} ${
+        language ? "language" : ""
+      }`}
+    >
+      <h3 className={isVisible ? "visible" : ""}>
+        {language ? "Projets" : "Projects"}
+      </h3>
       <div className="wrapper">
-        <div className="container">
+        <div
+          className="container"
+          id={`container-1${isVisible ? "visible" : ""}`}
+          ref={projetsRef}
+        >
           {filteredProjects.slice(0, 4).map((project, index) => (
             <React.Fragment key={project.id}>
               <input
                 type="radio"
                 name="slide"
                 id={`c${index + 1}`}
-                defaultChecked={index === 0} // Cochez le premier bouton radio par défaut
+                defaultChecked={index === 0}
               />
               <label
                 htmlFor={`c${index + 1}`}
@@ -71,16 +101,16 @@ const Projets = () => {
                       </p>
                     </div>
                     <div className="description-info">
-                      <p>{project.infos}</p>
+                      <p>{language ? project.infos : project.infosTranslate}</p>
                     </div>
                     <div className="link-project">
                       <a href={project.Link} target="_blank">
-                        Voir le projet
+                        {language ? "Voir le projet" : "View project"}
                       </a>
                     </div>
                     <div className="link-github">
                       <a href={project.Github} target="_blank">
-                        Lien github
+                        {language ? "Lien github" : "Github link"}
                       </a>
                     </div>
                   </div>
@@ -89,7 +119,10 @@ const Projets = () => {
             </React.Fragment>
           ))}
         </div>
-        <div className="container">
+        <div
+          className="container"
+          id={`container2${isVisible ? "visible" : ""}`}
+        >
           {filteredProjects.slice(4, 9).map((project, index) => (
             <React.Fragment key={`project-${index + 5}`}>
               <input

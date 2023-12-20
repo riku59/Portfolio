@@ -1,22 +1,24 @@
 .accueil {
   height: 100vh;
   color: $text;
+  background: $background;
 
   .accueil-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     height: 100%;
     align-items: center;
     .accueil-txt {
-      padding: 20px;
+      padding-left: 50px;
+
       h2 {
-        font-size: 5rem;
+        font-size: 9vmin;
       }
       h3 {
-        font-size: 3rem;
+        font-size: 5vmin;
       }
       p {
-        font-size: 1.4rem;
+        font-size: 3vmin;
         margin-top: 20px;
       }
     }
@@ -27,15 +29,19 @@
       margin-top: 40px;
       font-size: 1rem;
       border-radius: 20px;
+      position: absolute;
+      bottom: 180px;
+      left: 50%;
+      transform: translate(-50%);
+      z-index: 3;
 
       :hover {
         border-radius: 20px;
-        background: $component;
-        box-shadow: 0 3px 30px -5px $borderDark;
+        box-shadow: 0 7px 30px -5px $borderDark;
       }
       a {
         font-size: 1.3rem;
-        padding: 6px 12px;
+        padding: 8px 16px;
         border-radius: 10px;
         color: $text;
       }
@@ -46,8 +52,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 500px;
-      width: 500px;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+      }
       #logo1 {
         position: absolute;
         // filter: brightness(0%);
@@ -77,6 +87,7 @@
 }
 
 .dark-mode .accueil {
+  background: $backgrounddark;
   color: $textdark;
   .accueil-container {
     button {
@@ -118,6 +129,18 @@
         position: absolute;
         filter: grayscale(100%) brightness(30%) sepia(500%) hue-rotate(140deg)
           blur(3px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .accueil {
+    .accueil-container {
+      button {
+        a {
+          font-size: 1rem;
+        }
       }
     }
   }

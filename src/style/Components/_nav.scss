@@ -1,65 +1,67 @@
 .nav {
   display: grid;
-  grid-template-columns: 10% 78% 5% 7%;
-  padding: 25px 0;
+
+  grid-template-columns: 90% 5% 5%;
+  height: 8vh;
   align-items: center;
   position: fixed;
   width: 100%;
-  background: $backgroundnav;
+  // background: $backgroundnav;
   color: $text;
   z-index: 5;
   border-bottom: 1px solid $border;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+    background: $backgroundnav;
+  }
+  ul {
+    display: flex;
+    width: 85%;
+    justify-content: space-around;
 
-  .nav-home {
-    text-align: center;
-    h5 {
+    align-items: center;
+
+    li {
+      display: flex;
+      width: 60%;
       padding: 4px 8px;
       border-radius: 10px;
-      margin-left: 15px;
-      font-size: 1.2rem;
+      text-align: center;
+      justify-content: center;
+      font-size: 0.9rem;
     }
+
     :hover {
-      background: $hovertext;
+      border-bottom: 1px solid $borderDark;
+      padding: 4px 8px;
+
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px -5px $borderDark;
     }
   }
-  .nav-section {
-    width: 100%;
-    ul {
+  .nav-translate {
+    button {
+      width: 30px;
+      height: 30px;
       display: flex;
-      justify-content: space-around;
-      padding: 0 30px;
+      justify-content: center;
       align-items: center;
-      margin: 0 auto;
+    }
+    img {
+      height: 35px;
+    }
+  }
+  .nav-light-mode {
+    button {
+      font-size: 1.4rem;
+      margin-bottom: 3px;
 
-      li {
-        padding: 4px 8px;
-        border-radius: 10px;
-      }
-
-      :hover {
-        background: $hovertext;
+      background: none;
+      &:hover {
         cursor: pointer;
       }
-    }
-  }
-  .nav-language {
-    text-align: center;
-    h5 {
-      padding: 4px 8px;
-      border-radius: 10px;
-      font-size: 1.1rem;
-    }
-    :hover {
-      background: $hovertext;
-      cursor: pointer;
-    }
-  }
-  button {
-    font-size: 1.2rem;
-    display: flex;
-    background: $backgroundnav;
-    &:hover {
-      cursor: pointer;
     }
   }
 }
@@ -68,7 +70,10 @@
   .nav {
     border-bottom: 1px solid $borderDark;
     color: $textdark;
-    background: $backgrounddarknav;
+    // background: $backgrounddarknav;
+    &:hover {
+      background: $backgrounddark;
+    }
 
     .nav-home {
       h5:hover {
@@ -84,10 +89,27 @@
       }
     }
     button {
-      background: $backgrounddarknav;
+      background: none;
 
       :hover {
         background-color: $hoverdark;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .nav {
+    grid-template-columns: 66% 16% 16%;
+    ul {
+      #accueil {
+        display: flex;
+      }
+      #language {
+        display: flex;
+      }
+      li {
+        display: none;
       }
     }
   }

@@ -1,8 +1,18 @@
 .competence {
+  padding-bottom: 20px;
+  background: $backgroundnav;
+  .visible {
+    opacity: 1;
+    transform: translate(0px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
   h3 {
+    opacity: 0;
+    transform: translate(-150px);
+    transition: opacity 1s ease, transform 1s ease;
     font-size: 2rem;
     padding-bottom: 100px;
-    padding-top: 100px;
+    padding-top: 20px;
     padding-left: 50px;
     color: $text;
   }
@@ -13,7 +23,26 @@
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 50px;
-
+  .sass-logo.visible {
+    opacity: 1;
+    transition: opacity 0.9s ease, transform 1s ease;
+    transform: translate(0px);
+  }
+  .javascript-logo.visible {
+    opacity: 1;
+    transition: opacity 1.3s ease, transform 1.4s ease;
+    transform: translate(0px);
+  }
+  .react-logo.visible {
+    opacity: 1;
+    transition: opacity 1.7s ease, transform 1.8s ease;
+    transform: translate(0px);
+  }
+  .redux-logo.visible {
+    opacity: 1;
+    transition: opacity 2s ease, transform 2.2s ease;
+    transform: translate(0px);
+  }
   img {
     width: 130px;
   }
@@ -21,19 +50,18 @@
     background: blue;
     padding: 20px 10px;
     border-radius: 1000px;
-    animation: reveal linear;
-    animation-timeline: view();
-    animation-range-start: cover 0%;
-    animation-range-end: contain 70%;
+    opacity: 0;
+    transform: translate(-200px);
+    transition: opacity 0.9s ease, transform 1s ease;
   }
   .javascript-logo {
     background: rgb(238, 255, 0);
     padding: 12px 10px;
     border-radius: 1000px;
-    animation: reveal linear;
-    animation-timeline: view();
-    animation-range-start: cover 0%;
-    animation-range-end: contain 70%;
+    opacity: 0;
+    transform: translate(-400px);
+    transition: opacity 1.3s ease, transform 1.4s ease;
+
     img {
       width: 110px;
     }
@@ -42,21 +70,34 @@
     background: rgb(0, 174, 255);
     padding: 12px 10px;
     border-radius: 1000px;
-    animation: reveal linear;
-    animation-timeline: view();
-    animation-range-start: cover 0%;
-    animation-range-end: contain 70%;
+    transform: translate(-600px);
+    transition: opacity 1.7s ease, transform 1.8s ease;
+    opacity: 0;
   }
+
   .redux-logo {
     background: rgba(181, 0, 253, 0.61);
     padding: 12px 10px;
     border-radius: 1000px;
-    animation: reveal linear;
-    animation-timeline: view();
-    animation-range-start: cover 0%;
-    animation-range-end: contain 70%;
+    opacity: 0;
+    transform: translate(-900px);
+    transition: opacity 2s ease, transform 2.2s ease;
   }
 }
-.dark-mode .competence h3 {
-  color: $textdark;
+.dark-mode .competence {
+  background: $backgrounddark1;
+}
+
+@media screen and (max-width: 650px) {
+  .competence {
+    .competences {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px 0;
+
+      img {
+        width: 120px;
+      }
+    }
+  }
 }

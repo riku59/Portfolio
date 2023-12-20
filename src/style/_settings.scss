@@ -10,14 +10,15 @@
 $font-1: "font-1", sans-serif;
 $font-2: "font-2", serif;
 
-$background: #fafdfe; //2
+$background: #def7f9; //
 $component: #b5e9f0; //5
 $text: #107d98; //last
 $hovertext: #7dcedc;
 $hoverdark: #003848;
-$backgrounddark: #101b20; //1.
+$backgrounddark: #0b161a; //1.
+$backgrounddark1: #101b20; //#101b20;
 $textdark: #4ccce6; // after last
-$backgroundnav: #f2fafb; //1
+$backgroundnav: #f2fafb; //2
 $backgrounddarknav: #0b161a; //2 .
 $borderDark: #11809c; //Cyan7
 $border: #7dcedc; //cyan 7
@@ -43,6 +44,10 @@ $borderfocusdark: #4ccce6;
   border: none;
   text-decoration: none;
 }
+body,
+html {
+  overflow-x: hidden;
+}
 .dark-mode {
   background-color: $backgrounddark;
   color: $textdark;
@@ -60,7 +65,8 @@ h5 {
   letter-spacing: 1px;
 }
 p,
-li {
+li,
+div {
   font-family: $font-2;
   letter-spacing: 0.7px;
 }
