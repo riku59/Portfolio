@@ -1,8 +1,31 @@
 import React, { useEffect, useRef, useState } from "react";
 
+import emailjs from "@emailjs/browser";
+
 const ContactMe = ({ language }) => {
   const [isVisible, setIsVisible] = useState(false);
   const aboutMeRef = useRef(null);
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        `service_ts2j5jh`,
+        "template_oeyg4tr",
+        form.current,
+        "CyYv8QtOussiCWpyM"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   const handleScroll = () => {
     const element = aboutMeRef.current;
@@ -21,16 +44,23 @@ const ContactMe = ({ language }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <div className="contact-me" ref={aboutMeRef}>
       <h3 className={isVisible ? "visible" : ""}>
         {language ? "Me contacter" : "Contact me"}
       </h3>
-      <form className={isVisible ? "visible" : ""} action="">
+      <form
+        className={isVisible ? "visible" : ""}
+        action=""
+        ref={form}
+        onSubmit={sendEmail}
+      >
         <input
           type="text"
           name="nom"
           id="nom"
+          required
           placeholder={language ? "Nom" : "Name"}
         />
 
@@ -40,6 +70,7 @@ const ContactMe = ({ language }) => {
           type="text"
           name="objet"
           id="objet"
+          required
           placeholder={language ? "Objet" : "Object"}
         />
 
@@ -51,6 +82,7 @@ const ContactMe = ({ language }) => {
         ></textarea>
         <input type="submit" id="submit" />
       </form>
+      <div className="form-message"></div>
     </div>
   );
 };

@@ -25,6 +25,8 @@
     opacity: 0.75;
     padding: 22px 30px;
     height: 50px;
+    background: $backgroundnav;
+    color: $text;
   }
   textarea {
     font-family: $font-2;
@@ -33,6 +35,7 @@
     border-radius: 22px;
     opacity: 0.75;
     padding: 22px 30px;
+    color: $text;
   }
   form.visible {
     transform: translateY(0px);
@@ -96,17 +99,21 @@
   input {
     border: 1px solid $borderDark;
     box-shadow: 0 10px 30px -5px $borderDark;
+    background: $backgrounddark1;
+    color: $textdark;
   }
   textarea {
     border: 1px solid $borderDark;
     box-shadow: 0 10px 30px -5px $borderDark;
+    background: $backgrounddark1;
+    color: $textdark;
   }
   ::placeholder {
     color: $textdark;
   }
   input:focus,
   textarea:focus {
-    border: 3px solid $borderfocusdark;
+    border: 2px solid $borderfocusdark;
   }
 }
 

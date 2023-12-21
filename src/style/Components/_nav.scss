@@ -1,6 +1,11 @@
+.nav.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 1s ease;
+}
+
 .nav {
   display: grid;
-
+  transition: opacity 0.5s ease, transform 1s ease;
   grid-template-columns: 90% 5% 5%;
   height: 8vh;
   align-items: center;
@@ -11,6 +16,9 @@
   z-index: 5;
   border-bottom: 1px solid $border;
   opacity: 0.5;
+  .hidden {
+    display: none;
+  }
   &:hover {
     opacity: 1;
     background: $backgroundnav;
@@ -34,11 +42,10 @@
 
     :hover {
       border-bottom: 1px solid $borderDark;
-      padding: 4px 8px;
 
       border-radius: 10px;
       cursor: pointer;
-      box-shadow: 0 10px 30px -5px $borderDark;
+      box-shadow: 0 10px 10px -5px $borderDark;
     }
   }
   .nav-translate {
@@ -48,6 +55,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      &:hover {
+        cursor: pointer;
+      }
     }
     img {
       height: 35px;
@@ -90,19 +100,19 @@
     }
     button {
       background: none;
-
-      :hover {
-        background-color: $hoverdark;
-      }
     }
   }
 }
 
 @media screen and (max-width: 650px) {
   .nav {
+    opacity: 1;
     grid-template-columns: 66% 16% 16%;
     ul {
       #accueil {
+        display: flex;
+      }
+      #contact {
         display: flex;
       }
       #language {
@@ -110,6 +120,10 @@
       }
       li {
         display: none;
+      }
+      :hover {
+        border: none;
+        box-shadow: none;
       }
     }
   }
