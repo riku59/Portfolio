@@ -41,11 +41,21 @@ const Nav = ({ darkMode, setDarkMode, setLanguage, language }) => {
   return (
     <div className={`nav ${visible ? "visible" : "hidden"}`}>
       <ul>
-        <li id="accueil">{language ? "Accueil" : "Home"}</li>
-        <li>{language ? "A propos" : "About"}</li>
-        <li>{language ? "Projets" : "Projects"}</li>
-        <li>{language ? "Compétences" : "skill"}</li>
-        <li id="contact"> Contact</li>
+        <li id="accueil">
+          <a href="#home">{language ? "Accueil" : "Home"}</a>
+        </li>
+        <li>
+          <a href="#about">{language ? "A propos" : "About"}</a>
+        </li>
+        <li>
+          <a href="#project">{language ? "Projets" : "Projects"}</a>
+        </li>
+        <li>
+          <a href="#competence">{language ? "Compétences" : "skill"}</a>
+        </li>
+        <li id="contact-me">
+          <a href="#contact"> Contact</a>
+        </li>
       </ul>
       <div className="nav-translate">
         <button id="language" onClick={handleToggleLanguage}>

@@ -58,6 +58,7 @@ const Projets = ({ language }) => {
 
   return (
     <div
+      id="project"
       className={`container-projet ${isVisible ? "visible" : ""} ${
         language ? "language" : ""
       }`}

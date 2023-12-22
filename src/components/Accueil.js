@@ -88,7 +88,7 @@ const Accueil = ({ darkMode, setDarkMode, language, setLanguage }) => {
   }, [logoContainerRef]);
 
   return (
-    <div className="accueil">
+    <div className="accueil" id="home">
       <Nav
         darkMode={darkMode}
         setDarkMode={setDarkMode}
@@ -106,7 +106,7 @@ const Accueil = ({ darkMode, setDarkMode, language, setLanguage }) => {
           </p>
           <div className="contact-me">
             <button>
-              <a href="#">{language ? "Me contacter" : "Contact Me"}</a>
+              <a href="#contact">{language ? "Me contacter" : "Contact Me"}</a>
             </button>
           </div>
         </div>

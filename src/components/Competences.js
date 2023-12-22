@@ -23,6 +23,7 @@ const Competences = ({ language }) => {
   }, []);
   return (
     <div
+      id="competence"
       className={`competence ${isVisible ? "visible" : ""} ${
         language ? "language" : ""
       }`}

@@ -24,6 +24,7 @@ const AboutMe = ({ language }) => {
 
   return (
     <div
+      id="about"
       className={`about-me ${isVisible ? "visible" : ""} ${
         language ? "language" : ""
       }`}
@@ -45,7 +46,7 @@ const AboutMe = ({ language }) => {
       >
         {language
           ? `En tant que développeur front-end, je m'immerge dans l'univers de React avec une énergie débordante. Chaque ligne de code est une opportunité
-        d'apprendre et de grandir dans cet excitant domaine du développement web.`
+        d'apprendre et de grandir dans le domaine du développement web.`
           : "As a front-end developer, I immerse myself in the world of React with boundless energy. Every line of code is an opportunity to learn and grow in this exciting field of web development."}
       </p>
       <br />
@@ -56,8 +57,8 @@ const AboutMe = ({ language }) => {
         }}
       >
         {language
-          ? `Je suis en constante quête d'amélioration, grace a  l'apprentissage continu et la volonté de relever de nouveaux défis`
-          : "I'm constantly on the lookout for ways to improve, thanks to continuous learning and a willingness to take on new challenges."}
+          ? `Je suis en constante quête d'amélioration, grace a  l'apprentissage continu et la volonté de relever de nouveaux défis. Apres avoir commencé une formation disponible sur internet, j'ai décidé de suivre la formation "d'Intégrateur web" pour renforcer mon apprentissage, être suivis , et pour pouvoir accéder a une formation diplômante `
+          : `I'm constantly striving to improve, thanks to continuous learning and the willingness to take on new challenges. After starting a training course available on the internet, I decided to take the "Web Integrator" course to reinforce my learning, to be monitored, and to be able to access a diploma course .`}
       </p>
       <br />
       <p

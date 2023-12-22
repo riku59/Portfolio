@@ -46,7 +46,7 @@ const ContactMe = ({ language }) => {
   }, []);
 
   return (
-    <div className="contact-me" ref={aboutMeRef}>
+    <div className="contact-me" id="contact" ref={aboutMeRef}>
       <h3 className={isVisible ? "visible" : ""}>
         {language ? "Me contacter" : "Contact me"}
       </h3>

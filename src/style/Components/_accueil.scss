@@ -138,6 +138,8 @@
   .accueil {
     .accueil-container {
       button {
+        box-shadow: 0 7px 30px -5px $borderDark;
+
         a {
           font-size: 1rem;
         }
