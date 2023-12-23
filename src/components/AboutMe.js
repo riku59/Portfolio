@@ -1,26 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
+import useScrollVisibility from "../data/useScrollVisibility";
 
 const AboutMe = ({ language }) => {
-  const [isVisible, setIsVisible] = useState(false);
   const aboutMeRef = useRef(null);
-
-  const handleScroll = () => {
-    const element = aboutMeRef.current;
-
-    if (element) {
-      const bounding = element.getBoundingClientRect();
-      const isVisible = bounding.top <= window.innerHeight * 0.7;
-      setIsVisible(isVisible);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const isVisible = useScrollVisibility(aboutMeRef);
 
   return (
     <div

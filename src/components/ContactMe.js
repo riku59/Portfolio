@@ -1,10 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
+
+import useScrollVisibility from "../data/useScrollVisibility";
 
 import emailjs from "@emailjs/browser";
 
 const ContactMe = ({ language }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const aboutMeRef = useRef(null);
+  const contactMeRef = useRef(null);
+  const isVisible = useScrollVisibility(contactMeRef);
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -27,26 +30,8 @@ const ContactMe = ({ language }) => {
       );
   };
 
-  const handleScroll = () => {
-    const element = aboutMeRef.current;
-
-    if (element) {
-      const bounding = element.getBoundingClientRect();
-      const isVisible = bounding.top <= window.innerHeight * 0.7;
-      setIsVisible(isVisible);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <div className="contact-me" id="contact" ref={aboutMeRef}>
+    <div className="contact-me" id="contact" ref={contactMeRef}>
       <h3 className={isVisible ? "visible" : ""}>
         {language ? "Me contacter" : "Contact me"}
       </h3>

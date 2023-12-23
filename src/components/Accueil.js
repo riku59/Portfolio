@@ -6,6 +6,9 @@ const Accueil = ({ darkMode, setDarkMode, language, setLanguage }) => {
 
   useEffect(() => {
     const logoContainer = logoContainerRef.current;
+    const logos = Array.from(logoContainer.querySelectorAll(".logo"));
+    console.log(logos);
+    const commonStyles = "transform 0.7s linear";
 
     // Positions initiales des logos
     const initialPositions = [
@@ -26,53 +29,31 @@ const Accueil = ({ darkMode, setDarkMode, language, setLanguage }) => {
       const centerX = left + width / 2;
       const centerY = top + height / 2;
 
+      logos.forEach((logo) => (logo.style.transition = commonStyles));
+
       // Calcul de l'angle entre la position actuelle de la souris et la position initiale du logo
-      const angleX = (clientY - centerY) / height;
-      const angleY = (clientX - centerX) / width;
+      const angleX = ((clientY - centerY) / height) * 12;
+      const angleY = ((clientX - centerX) / width) * 12;
 
-      const translateX1 = (clientX - centerX) * 0.15;
-      const translateY1 = (clientY - centerY) * 0.15;
+      const translateX = clientX - centerX; // position X lors du déplacement de la souris
+      const translateY = clientY - centerY; // position Y lorsque lors du déplacement de la souris
 
-      const translateX2 = (clientX - centerX) * 0.1;
-      const translateY2 = (clientY - centerY) * 0.1;
-
-      const translateX3 = (clientX - centerX) * 0.07;
-      const translateY3 = (clientY - centerY) * 0.07;
-
-      const translateX4 = (clientX - centerX) * 0.04;
-      const translateY4 = (clientY - centerY) * 0.04;
-
+      const rotate = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
       // Appliquer la rotation, la translation en X et Y, et l'échelle aux quatre images du logo
 
-      logoContainer.querySelector("#logo1").style.transition =
-        "transform 0.7s linear";
-      logoContainer.querySelector("#logo2").style.transition =
-        "transform 0.7s linear";
-      logoContainer.querySelector("#logo3").style.transition =
-        "transform 0.7s  linear";
-      logoContainer.querySelector("#logo4").style.transition =
-        "transform 0.7s linear";
+      logos[0].style.transform = `${rotate} translateX(${
+        translateX * 0.15
+      }px) translateY(${translateY * 0.15}px) scale(1)`;
 
-      logoContainer.querySelector("#logo1").style.transform = `rotateX(${
-        angleX * 12
-      }deg) rotateY(${
-        angleY * 12
-      }deg) translateX(${translateX1}px) translateY(${translateY1}px) scale(1)`;
-      logoContainer.querySelector("#logo2").style.transform = `rotateX(${
-        angleX * 12
-      }deg) rotateY(${
-        angleY * 12
-      }deg) translateX(${translateX2}px) translateY(${translateY2}px) scale(0.9)`;
-      logoContainer.querySelector("#logo3").style.transform = `rotateX(${
-        angleX * 12
-      }deg) rotateY(${
-        angleY * 12
-      }deg) translateX(${translateX3}px) translateY(${translateY3}px) scale(0.8)`;
-      logoContainer.querySelector("#logo4").style.transform = `rotateX(${
-        angleX * 12
-      }deg) rotateY(${
-        angleY * 12
-      }deg) translateX(${translateX4}px) translateY(${translateY4}px) scale(0.7)`;
+      logos[1].style.transform = `${rotate} translateX(${
+        translateX * 0.1
+      }px) translateY(${translateY * 0.1}px) scale(0.9)`;
+      logos[2].style.transform = `${rotate} translateX(${
+        translateX * 0.07
+      }px) translateY(${translateY * 0.07}px) scale(0.8)`;
+      logos[3].style.transform = `${rotate} translateX(${
+        translateX * 0.04
+      }px) translateY(${translateY * 0.04}px) scale(0.7)`;
     };
 
     handleMouseMove({

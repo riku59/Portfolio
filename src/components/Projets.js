@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { projectsData } from "../data/projectsData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import useScrollVisibility from "../data/useScrollVisibility";
 
 import {
   faHtml5,
@@ -34,28 +36,8 @@ const filteredProjects = projectsData.filter((project) => {
 });
 
 const Projets = ({ language }) => {
-  const [isVisible, setIsVisible] = useState(false);
   const projetsRef = useRef(null);
-
-  const handleScroll = () => {
-    const element = projetsRef.current;
-
-    if (element) {
-      const bounding = element.getBoundingClientRect();
-      const isVisible = bounding.top <= window.innerHeight * 0.7;
-      setIsVisible(isVisible);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Vérifie la visibilité initiale
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+  const isVisible = useScrollVisibility(projetsRef);
   return (
     <div
       id="project"

@@ -1,33 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
+
+import useScrollVisibility from "../data/useScrollVisibility";
 
 const Competences = ({ language }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const aboutMeRef = useRef(null);
-
-  const handleScroll = () => {
-    const element = aboutMeRef.current;
-
-    if (element) {
-      const bounding = element.getBoundingClientRect();
-      const isVisible = bounding.top <= window.innerHeight * 0.7;
-      setIsVisible(isVisible);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const skillRef = useRef(null);
+  const isVisible = useScrollVisibility(skillRef);
   return (
     <div
       id="competence"
       className={`competence ${isVisible ? "visible" : ""} ${
         language ? "language" : ""
       }`}
-      ref={aboutMeRef}
+      ref={skillRef}
     >
       <h3 className={isVisible ? "visible" : ""}>
         {language ? "Compétences" : "Skills"}
