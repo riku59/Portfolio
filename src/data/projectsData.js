@@ -14,7 +14,7 @@ export const projectsData = [
       "Projet qui regroupe différent style  utile, ainsi qu'un effet de vaisseau se déplaçant sur la page.  ",
     infosTranslate:
       "A project that brings together various useful styles, as well as a ship effect that moves across the page.",
-    img: "",
+
     Link: "https://riku59.github.io/Vaisseau_css/",
     Github: "https://github.com/riku59/Vaisseau_css",
   },

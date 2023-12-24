@@ -15,10 +15,10 @@ const ContactMe = ({ language }) => {
 
     emailjs
       .sendForm(
-        `service_ts2j5jh`,
-        "template_oeyg4tr",
-        form.current,
-        "CyYv8QtOussiCWpyM"
+        `service_ts2j5jh`, // service ID
+        "template_oeyg4tr", //  template ID
+        form.current, // modèle template
+        "CyYv8QtOussiCWpyM" // clé public
       )
       .then(
         (result) => {

@@ -5,9 +5,9 @@ const Accueil = ({ darkMode, setDarkMode, language, setLanguage }) => {
   const logoContainerRef = useRef(null);
 
   useEffect(() => {
-    const logoContainer = logoContainerRef.current;
+    const logoContainer = logoContainerRef.current; // cible le logo
     const logos = Array.from(logoContainer.querySelectorAll(".logo"));
-    console.log(logos);
+    
     const commonStyles = "transform 0.7s linear";
 
     // Positions initiales des logos
@@ -32,13 +32,14 @@ const Accueil = ({ darkMode, setDarkMode, language, setLanguage }) => {
       logos.forEach((logo) => (logo.style.transition = commonStyles));
 
       // Calcul de l'angle entre la position actuelle de la souris et la position initiale du logo
-      const angleX = ((clientY - centerY) / height) * 12;
+      const angleX = ((clientY - centerY) / height) * 12; // gere l'angle pour ne pas déformer les images.
       const angleY = ((clientX - centerX) / width) * 12;
 
       const translateX = clientX - centerX; // position X lors du déplacement de la souris
       const translateY = clientY - centerY; // position Y lorsque lors du déplacement de la souris
 
       const rotate = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+
       // Appliquer la rotation, la translation en X et Y, et l'échelle aux quatre images du logo
 
       logos[0].style.transform = `${rotate} translateX(${
@@ -57,8 +58,9 @@ const Accueil = ({ darkMode, setDarkMode, language, setLanguage }) => {
     };
 
     handleMouseMove({
-      clientX: window.innerWidth / 2,
-      clientY: window.innerHeight / 2,
+      //met les 4 images a leur position.
+      clientX: window.innerWidth / 1,
+      clientY: window.innerHeight / 1,
     });
 
     document.addEventListener("mousemove", handleMouseMove);

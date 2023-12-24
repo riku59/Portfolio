@@ -16,16 +16,16 @@ const Nav = ({ darkMode, setDarkMode, setLanguage, language }) => {
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
-    const isScrollingDown = currentScrollPos > prevScrollPos;
-
+    const isScrollingDown = currentScrollPos > prevScrollPos; //  position de maintenant > position d'avant, faux
     setPrevScrollPos(currentScrollPos);
 
     // Définir la visibilité en fonction de la direction de défilement
     setVisible(() => {
-      if (isScrollingDown && currentScrollPos > 64) {
-        return false; // Cacher la navigation lors du défilement vers le bas après 64 pixels
+      if (isScrollingDown === true) {
+        // si défilement vers le bas
+        return false; // Cacher la navigation
       } else {
-        return true;
+        return true; // montre la nav
       }
     });
   };
@@ -36,7 +36,7 @@ const Nav = ({ darkMode, setDarkMode, setLanguage, language }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPos]); // Corrected to use prevScrollPos here
+  }, [prevScrollPos]); //
 
   return (
     <div className={`nav ${visible ? "visible" : "hidden"}`}>
