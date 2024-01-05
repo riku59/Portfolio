@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-
 import useScrollVisibility from "../data/useScrollVisibility";
 
 const Competences = ({ language }) => {
